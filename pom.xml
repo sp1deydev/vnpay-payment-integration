@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.monolithic</groupId>
-    <artifactId>cinema</artifactId>
+    <artifactId>vnpay</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cinema</name>
+    <name>vnpay</name>
     <description>Demo project for VNPay Payment</description>
     <url/>
     <licenses>
