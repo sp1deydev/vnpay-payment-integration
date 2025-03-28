@@ -1,6 +1,10 @@
 package com.payment.vnpay.config;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -10,11 +14,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
+@RequiredArgsConstructor
 public class VNPayConfig {
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
     public static String vnp_ReturnUrl = "http://localhost:8080/payment/v1/vnpay-payment/result";
-    public static String vnp_TmnCode = "";
-    public static String secretKey = "";
+    public static String vnp_TmnCode = EnvConfig.get("VNPAY_TMN_CODE");
+    public static String secretKey = EnvConfig.get("VNPAY_SECRET_KEY");
     public static String vnp_ApiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
 
     public static String md5(String message) {
